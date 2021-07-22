@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <link rel="stylesheet" href="{% static 'plugins/css/bootstrap.css' %}">
+
+    <link rel="stylesheet" href="{% static 'plugins/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/css/all.min.css' %}">
+      <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-grid.css' %}">
+        <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-grid.min.css' %}">
+            <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-reboot.css' %}">
+            <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-reboot.min.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+ <script src="{% static 'plugins/js/jquery.min.js' %}"> </script>
+    <script src="{% static 'plugins/js/bootstrap.min.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.bundle.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.bundle.min.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.js' %}"> </script>
+              <script src="{% static 'plugins/js/jquery.js' %}"> </script>
+
+
+
+
+    <style>
+ .a1
+        {
+            color:blue;
+            text-align:center;
+            background-color:yellow;
+            border:1px solid white;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+
+        }
+
+
+.a2
+ { letter-spacing:7px;
+   color:green;
+   background-color:white;
+   {#box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);#}
+
+}
+.nav{
+color:blue;
+text-align:right;
+word-spacing:7px;
+
+ }
+
+
+
+button
+
+{ 
+ text-align:center;
+ color:white;
+ border:none;
+ text-decoration:none;
+ padding:5px 15px;
+ display:inline-block;
+ font-size:16px;
+ background-color:green;
+ margin:4px 2px;
+    }
+h3{
+border:1px solid white;
+background-color:pink;
+text-align:center;
+color:green;
+letter-spacing:7px;
+
+}
+
+
+
+
+</style>
+</head>
+<body>
+<div style="padding  : 0px;margin: 0px">
+<div class="a1">
+ <div class="container-fluid">
+
+    <div class="row justify-content-center align-items-center">
+        <div >
+    <img style="width: 90px;height: 90px;background-color: palegoldenrod;border-radius:40px;" src="{% static 'plugins/images/logo.jpg' %}"  >
+        </div>
+    <div>
+<h1 style="letter-spacing:7px"><I>IJAYA HEALTH CARE CONSULTANCY CENTER</I></h1>
+    </div>
+    </div>
+        </div></div>
+<div style="float: right">
+    <span><a href = "{% url 'login' %}">Logout</a></span>
+
+</div>
+<br>
+<div style="color: green;height: 35px">
+<h3><I>Delivering-Doctor-Appointment</I></h3>
+</div><br>
+<form action="update/" method="POST">
+    {% csrf_token %}
+
+     <div class="container-fluid">
+    <div class="row h-100 justify-content-center " style="background-color: #d6e9c6; height:340px">
+<div class="col-md-1.5" style="color: brown;font-style: normal">
+<br>
+        <h5>First Name</h5><br>
+        <h5>Last Name</h5><br>
+        <h5>Mobile Number</h5><br>
+        <h5>Adhar Number</h5><br>
+        <h5>Sex</h5><br>
+        <h5>Date Of Birth</h5><br>
+        <h5>Address Of Patient</h5><br>
+        <h5>Slot Booking Date</h5><br>
+        <h5>Doctor Appointment Date</h5><br>
+</div>
+    <div class="col-md-1" style="color:red;text-align: center">
+<br>
+        <h5>:</h5><br>
+        <h5>:</h5><br>
+        <h5>:</h5><br>
+        <h5>:</h5><br>
+        <h5>:</h5><br>
+        <h5>:</h5><br>
+        <h5>:</h5><br>
+        <h5>:</h5><br>
+        <h5>:</h5><br>
+</div>
+    <div class="col-md-2">
+        <br>
+        <h5>{{employee.First_Name}}</h5><br>
+        <h5>{{employee.Last_Name}}</h5><br>
+        <h5>{{employee.Mobile_Number}}</h5><br>
+        <h5>{{employee.Adhar_Number }}</h5><br>
+        <h5>{{employee.Sex }}</h5><br>
+        <h5>{{employee.Date_Of_Birth|date:'d-m-y'}}</h5><br>
+        <h5>{{employee.Address }}</h5><br>
+        <h5>{{employee.Slot_Booking_Date }}</h5><br>
+        <input type="date" required name="dap"  value="{{employee.Doctor_Appointment_Date }}"><br>
+    </div>
+
+
+    </div>
+    </div>
+         <input type="hidden" class="form-control" name="id" value="{{employee.id }}">
+           <center>
+ <button  name="action" value="Save" style="margin-top: 18px;background-color: red" >ADD</button>
+    </center>
+
+
+
+</form>
+</div>
+</body>
+</html>

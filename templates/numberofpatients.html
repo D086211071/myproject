@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+   {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+      <link rel="stylesheet" href="{% static 'plugins/css/bootstrap.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="{% static 'plugins/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/css/all.min.css' %}">
+      <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-grid.css' %}">
+        <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-grid.min.css.css' %}">
+            <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-reboot.css' %}">
+            <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-reboot.min.css' %}">
+    <style>
+
+.a1
+ {
+ color:blue;
+ text-align:center;
+ background-color:yellow;
+ border:1px solid white;
+ box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+}
+ .wrapper{
+ overflow-y:scroll;
+ height:350px;}
+
+
+ input[type=button]
+
+
+        {
+            text-align:center;
+            color:white;
+            border:none;
+            text-decoration:none;
+            display:inline-block;
+            font-size:20px;
+            background-color:green;
+            margin:4px 2px;}
+ button
+ {
+            text-align:center;
+            color:white;
+            border:none;
+            text-decoration:none;
+            display:inline-block;
+            font-size:14px;
+            background-color:green;
+            margin:4px 2px;}
+th,td
+ {
+
+  width:5%;
+  
+}
+  .middle {
+      letter-spacing: 7px;
+      color: blue;
+      text-align: center;
+      background-color: pink;
+  }
+.dar
+{
+
+ word-spacing:7px;
+
+}
+.wrapper th{
+position:sticky;
+top:0;
+background:1px black;
+}
+
+
+</style>
+
+
+</head>
+<body>
+<div style="padding: 0px;margin: 0px">
+<form action="water" method="POST">
+    {% csrf_token %}
+<div class="a1">
+ <div class="container-fluid">
+
+    <div class="row justify-content-center align-items-center">
+        <div >
+    <img style="width: 90px;height: 90px;background-color: palegoldenrod;border-radius:40px;" src="{% static 'plugins/images/logo.jpg' %}"  >
+        </div>
+    <div>
+<h1 style="letter-spacing:7px"><I>IJAYA HEALTH CARE CONSULTANCY CENTER</I></h1>
+    </div>
+    </div>
+        </div></div>
+
+<div class="dar" style="float: right">
+    <span><a href="{% url 'old' %}">Total-Reports</a></span>
+    <span><a href = "{% url 'login' %}">Logout</a></span>
+</div>
+<br>
+
+
+<div class="middle" style="height: 35px">
+<label>Date Of Reports</label>
+<input  type="date"  name="d" required/>
+<span>
+    <button  name="action" value="fubmit" >Search</button>
+</span>
+</div><br>
+
+
+
+
+<div class="wrapper">
+<table class="table table-striped table-hover table-bordered table-dark" >
+
+<thead>
+<tr style="color:white">
+   <th>Hospital Name</th>
+    <th>Doctor Appointment Date</th>
+    <th>Number Of Patients</th>
+</tr>
+</thead>
+<tr>
+           {% for j in g %}
+              <tr>
+                  <td>{{j.Hospital_Name}}</td>
+              <td>{{j.Doctor_Appointment_Date }}</td>
+              <td>{{j.dcount }}</td>
+
+              </tr>
+           {% endfor %}
+
+        </tr>
+</tbody>
+</table>
+</div>
+
+
+<br>
+<center><a href = "{% url 'login' %}"><input type="button" value="Back" style="background-color:red">
+</a>
+</center>
+</form>
+ <script src="{% static 'plugins/js/jquery.min.js' %}"> </script>
+    <script src="{% static 'plugins/js/bootstrap.min.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.bundle.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.bundle.min.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.js' %}"> </script>
+              <script src="{% static 'plugins/js/jquery.js' %}"> </script>
+
+
+   <!-- <script src="plugins/js/main.js"> </script> -->
+</div>
+</body>
+</html>

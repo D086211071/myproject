@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<head xmlns="http://www.w3.org/1999/html">
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+     <link rel="stylesheet" href="{% static 'plugins/css/bootstrap.css' %}">
+
+    <link rel="stylesheet" href="{% static 'plugins/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/css/all.min.css' %}">
+      <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-grid.css' %}">
+        <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-grid.min.css' %}">
+            <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-reboot.css' %}">
+            <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-reboot.min.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+    .a1
+ {
+
+
+ color:blue;
+ text-align:center;
+ background-color:yellow;
+ border:1px solid white;
+ box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+
+ }
+    input[type=button]
+
+
+        {
+            text-align:center;
+ color:white;
+ border:none;
+ text-decoration:none;
+ padding:5px 10px;
+ display:inline-block;
+ font-size:15px;
+ background-color:green;
+ margin:4px 2px;
+         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+
+    }
+
+.dar{
+color:blue;
+text-align:right;
+word-spacing:7px;
+ }
+
+
+button
+
+{
+ text-align:center;
+ color:white;
+ border:none;
+ text-decoration:none;
+ padding:5px 10px;
+ display:inline-block;
+ font-size:15px;
+ background-color:green;
+ margin:4px 2px;
+     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+
+}
+h3{
+border:1px solid white;
+background-color:pink;
+text-align:center;
+color:green;
+letter-spacing:7px;
+
+}
+
+       input[type=submit] {
+           text-align: center;
+           color: white;
+           border: none;
+           text-decoration: none;
+           padding: 5px 25px;
+           display: inline-block;
+           font-size: 15px;
+           background-color:blue;
+           margin: 4px 2px;
+           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+       }
+</style>
+
+</head>
+<body>
+<div style="padding:0;margin: 0">
+
+<div class="a1">
+        <div class="container-fluid">
+
+    <div class="row justify-content-center align-items-center">
+        <div >
+    <img style="width: 90px;height: 90px;background-color: palegoldenrod;border-radius:40px;" src="{% static 'plugins/images/logo.jpg' %}"  >
+        </div>
+    <div>
+<h1 style="letter-spacing:7px"><I>IJAYA HEALTH CARE CONSULTANCY CENTER</I></h1>
+    </div>
+    </div>
+        </div>
+</div>
+<div class="dar" style="float: right">
+    <span><a href = "{% url 'login' %}">Login</a></span>
+    <span></span>
+    <span style="color:blue">Contact-No: 9502915158</span>
+
+</div><br>
+<div class="Ed" style="height: 35px">
+<h3><i>Patient-Registration</I></h3>
+</div><br>
+<form  action="/water/"  method="POST">
+    {% csrf_token %}
+<div class="container-fluid">
+    <div class="row h-100 justify-content-center " style="background-color:#b1dfbb">
+
+<div class="col-md-2" style="margin-left: 5px;margin-top: 7px">
+      <br>
+    <h4><i>First Name </i></h4><br>
+    <h4><i>Last Name</i></h4><br>
+    <h4><i>Mobile Number</i></h4><br>
+    <h4><i>Adhar Number</i></h4><br>
+    <h4><i>Date Of Birth</i></h4><br>
+    <h4><i>Sex </i></h4><br>
+    <h4><i>Hospital Name</i></h4><br>
+    <h4><i>Address Of Patient</i></h4><br>
+
+
+</div>
+            <div class="col-md-1" style="margin-top: 5px;color:red;text-align: center">
+                <br>
+                <h4>:</h4><br>
+                <h4>:</h4><br>
+                <h4>:</h4><br>
+                <h4>:</h4><br>
+                <h4>:</h4><br>
+                <h4>:</h4><br>
+                <h4>:</h4><br>
+                <h4>:</h4><br>
+
+
+
+            </div>
+
+<div class="col-md-2.5">
+
+<br>
+
+      <input type="text" name="fname"  class="form-control" id="first" onkeyup="this.value = this.value.toUpperCase();" value="{{ values.firstname }}" required/><br>
+
+        <input type="text" name="lname" id="lname" required class="form-control"   onkeyup="this.value = this.value.toUpperCase();" value="{{values.lastname }}"><br>
+
+
+        <input type="number" name="mobile" id="mobile" required class="form-control"   value="{{values.mobilenumber }}"><small style="color: red">
+
+  {{ values.error_message }}
+ </small><br>
+
+
+        <input type="number" name="adhar" id="adhar" required class="form-control"  value="{{values.adharnumber }}"><small style="color: red">
+  {{values.error_messages }}
+  </small><br>
+
+
+        <input  type="date" name="dateofbirth" id="date"  class="form-control" value="{{ values.dateofbirth }}" required/><br>
+{#<p style="font-size: 20px">#}
+{#    <input type="radio" name="sex" value="Male" id="male" required/> Male#}
+{##}
+{#    <input type="radio" name="sex" value="Female"  id="female" required/> Female</p>#}
+     <select name="sex"  required class="form-control">
+     <option>{{ values.sex }}</option>
+     <option><i>Male</i></option>
+     <option><i>Female</i></option>
+ </select><br>
+
+ <select name="hospital"  required class="form-control">
+     <option>{{ values.hospitalnames }}</option>
+
+
+     <option value="KIMS"><i>Kims Hospital,Ongole</i></option>
+     <option value="NIMS"><i>Nims Hospital,Guntur</i></option>
+ </select><br>
+    <textarea  name="address"  class="form-control" type="text"   rows="2" cols="30" required >{{ values.address }}</textarea><br>
+</div>
+</div>
+</div>
+<center>
+    <input type="submit"  name="action" style="margin-top: 10px" value="Save" >
+</center>
+
+</form>
+<script src="{% static 'plugins/js/jquery.min.js' %}"> </script>
+<script src="{% static 'plugins/js/bootstrap.min.js' %}"> </script>
+<script src="{% static 'plugins/js/bootstrap.bundle.js' %}"> </script>
+<script src="{% static 'plugins/js/bootstrap.bundle.min.js' %}"> </script>
+<script src="{% static 'plugins/js/bootstrap.js' %}"> </script>
+<script src="{% static 'plugins/js/jquery.js' %}"> </script>
+{#<script>#}
+{#    var form=document.getElementById('form')#}
+{#    form.addEventListener('submit',function (event) {#}
+{#        event.preventDefault()#}
+{#        var fname=document.getElementById('male').value#}
+{#        console.log(fname)#}
+{##}
+{#    })#}
+{#</script>#}
+
+</div>
+</body>
+</html>

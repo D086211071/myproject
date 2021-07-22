@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+   {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <link rel="stylesheet" href="{% static 'plugins/css/bootstrap.css' %}">
+
+    <link rel="stylesheet" href="{% static 'plugins/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/css/all.min.css' %}">
+      <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-grid.css' %}">
+        <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-grid.min.css' %}">
+            <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-reboot.css' %}">
+            <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-reboot.min.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+ <script src="{% static 'plugins/js/jquery.min.js' %}"> </script>
+    <script src="{% static 'plugins/js/bootstrap.min.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.bundle.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.bundle.min.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.js' %}"> </script>
+              <script src="{% static 'plugins/js/jquery.js' %}"> </script>
+
+
+
+    <style>
+
+.a1
+ {
+ color:blue;
+ text-align:center;
+ background-color:yellow;
+ border:1px solid white;
+ box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+ }
+.a2
+ { letter-spacing:7px;
+   color:green;
+   background-color:white;
+   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+
+
+ }
+.t1
+ {
+   color: blue;
+   border:1px solid white;
+   align:center;
+   background-color:lightyellow;
+
+ }
+ .nav{
+ color:blue;
+ text-align:right;
+ word-spacing:7px;
+ }
+ .user{
+
+ background-color:pink;
+ letter-spacing:7px;
+ color:blue;
+
+
+ }
+ .imge
+ {
+  border:1px solid white;
+  }
+button
+{
+text-align:center;
+            color:white;
+            border:none;
+            text-decoration:none;
+            display:inline-block;
+            font-size:20px;
+            background-color:green;
+            margin:4px 2px;
+     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+
+
+
+}
+input[type='number'],input[type='password']
+{
+    width:250px;
+    height: 50px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border: 1px solid #000;
+    padding-left:45px;
+     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+
+}
+span{
+    position: absolute;
+    background: white;
+    margin-right: 18px;
+    margin-top: 3px;
+    width:35px;
+    height: 20px;
+    padding-top:3px;
+    padding-bottom: 3px;
+    border: 1px solid #fff;
+}
+input[type=submit]
+{
+            text-align:center;
+            color:white;
+            border:none;
+            text-decoration:none;
+            display:inline-block;
+            font-size:20px;
+            background-color:green;
+            margin:4px 2px;
+     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+
+}
+#no{
+    background-color:brown;
+color:white;
+padding:5px 8px;
+text-align:center;
+text-decoration:none;
+font-size:15px;
+}
+        form{
+	background: #fff;
+}
+/* set padding and size of th form */
+.form-container{
+	border-radius: 10px;
+	padding: 30px;
+}
+
+ </style>
+</head>
+<body>
+<div style="padding: 0px;margin: 0">
+
+<div class="a1">
+ <div class="container-fluid">
+
+    <div class="row justify-content-center align-items-center">
+        <div >
+    <img style="width: 90px;height: 90px;background-color: palegoldenrod;border-radius:40px;" src="{% static 'plugins/images/logo.jpg' %}"  >
+        </div>
+    <div>
+<h1 style="letter-spacing:7px"><I>IJAYA HEALTH CARE CONSULTANCY CENTER</I></h1>
+    </div>
+    </div>
+        </div>
+</div>
+
+ <div class="bar" style="float: right">
+
+     <small><a href = "{% url 'home' %}">New-Patient-Registration</a></small>
+
+ </div><br>
+
+
+<div class="user" style="height: 35px">
+<h3 style="color:green" align="center"><I>User-Login</I></h3>
+</div><br>
+
+<form action= "/water/" method="POST">
+        {% csrf_token %}
+
+    <div class="container-fluid">
+    <div class="row  justify-content-center align-items-center" style=" height:530px;background-image: url( '/static/plugins/images/HOT.jpg')">
+        <div class="form-container justify-content-center ">
+<div class="col-md-12">
+
+
+    <input type="number" required name="username" class="form-control"  placeholder="Enter Username" id="usr" value="{% if username %}
+{{ username }}
+{% endif %}">
+  <input type="password" required name="password" class="form-control" placeholder="Enter Password"  id="usr" value="{% if password %}
+{{ password }}
+{% endif %}">
+<small style="color: red" >{% if error_message %}
+    {{ error_message }}
+    {% endif %}
+</small><br>
+    <center>
+<button name="action" value="login">Sign in</button>
+    </center>
+
+
+</div>
+
+</div>
+</div>
+    <!-- <script src="plugins/js/main.js"> </script> -->
+    </div>
+
+{##}
+{##}
+{#<script>#}
+{#    var form=document.querySelector('form');#}
+{#    form.addEventListener('submit',function (event) {#}
+{#        event.preventDefault();#}
+{##}
+{#    });#}
+{#</script>#}
+</form>
+</div>
+</body>
+</html>

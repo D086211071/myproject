@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'plugins/css/bootstrap.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="{% static 'plugins/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/css/all.min.css' %}">
+      <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-grid.css' %}">
+        <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-grid.min.css.css' %}">
+            <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-reboot.css' %}">
+            <link rel="stylesheet" href="{% static 'plugins/css/bootstrap-reboot.min.css' %}">
+
+<style>
+
+.a1
+ {
+ color:blue;
+ text-align:center;
+ background-color:yellow;
+ border:1px solid white;
+ box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);
+
+ }
+
+ th{
+ background-color:white;}
+
+
+{#th,td#}
+{# {#}
+{#  border:1px solid pink;#}
+{#  width:5%;#}
+{#  overflow:auto;#}
+{#  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);#}
+
+
+ .middle{
+ letter-spacing:7px;
+ text-align:center;
+ background-color:pink;
+ {#box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.23);#}
+
+
+ }
+  .nav{
+ color:blue;
+ text-align:right;
+ word-spacing:7px;
+ }
+ h4{color:green;
+  text-align:center;}
+  input[type=button]
+
+{ border-radius:none;
+ text-align:center;
+ color:white;
+ border:none;
+ text-decoration:none;
+ padding:5px 12px;
+ display:inline-block;
+ font-size:16px;
+ background-color:green;
+ margin:4px 2px;}
+
+</style>
+</head>
+<body>
+<div style="padding: 0px;margin: 0px">
+
+<div class="a1">
+ <div class="container-fluid">
+
+    <div class="row justify-content-center align-items-center">
+        <div >
+    <img style="width: 90px;height: 90px;background-color: palegoldenrod;border-radius:40px;" src="{% static 'plugins/images/logo.jpg' %}"  >
+        </div>
+    <div>
+<h1 style="letter-spacing:7px"><I>IJAYA HEALTH CARE CONSULTANCY CENTER</I></h1>
+    </div>
+    </div>
+        </div>
+</div>
+<div style="float: right">
+</div>
+<br>
+<div class="middle" style="height: 35px">
+<h3 style="color: green"><i>Patient-Status</i></h3>
+</div>
+<br>
+<div class="wrapper">
+<table class="table table-striped table-hover table-bordered " >
+
+<thead>
+<tr style="color:brown">
+
+<th>First Name</th>
+<th>Last Name</th>
+<th>Mobile Number</th>
+    <th>Adhar Number</th>
+<th>Date Of Birth</th>
+<th>Sex</th>
+<th>Hospital Name</th>
+    <th>Address</th>
+<th>Slot Booking Date</th>
+    <th>Doctor Appointment Date</th>
+</tr>
+</thead>
+<tbody>
+
+
+
+           {% for j in k%}
+              <tr>
+
+                  <td>{{j.First_Name}}</td>
+                  <td>{{j.Last_Name}}</td>
+                  <td>{{j.Mobile_Number}}</td>
+                  <td>{{j.Adhar_Number}}</td>
+                  <td>{{j.Date_Of_Birth}}</td>
+                  <td>{{j.Sex}}</td>
+                  <td>{{j.Hospital_Name }}</td>
+                  <td>{{j.Address }}</td>
+                  <td>{{j.Slot_Booking_Date }}</td>
+                  <td style="color: red">Comming Soon</td>
+               </tr>
+
+        {% endfor %}
+
+</tbody>
+</table>
+</div>
+<center>
+<h5 style="color: #20c997">
+Your data Is successfully submitted so login with <i style="background-color:yellow">User Id(Mobile Number) $ Password(Adhar Number) </i>with in 12 for doctor appointment date .
+</h5>
+</center>
+
+<br>
+<center>
+    <a href = "{% url 'home' %}">
+        <input  style="background-color: red" type="button" value="Back"></a>
+</center>
+       <script src="{% static 'plugins/js/jquery.min.js' %}"> </script>
+    <script src="{% static 'plugins/js/bootstrap.min.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.bundle.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.bundle.min.js' %}"> </script>
+          <script src="{% static 'plugins/js/bootstrap.js' %}"> </script>
+              <script src="{% static 'plugins/js/jquery.js' %}"> </script>
+
+</div>
+</body>
+</html>
